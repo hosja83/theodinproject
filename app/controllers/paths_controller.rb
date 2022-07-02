@@ -8,6 +8,7 @@ class PathsController < ApplicationController
   end
 
   def index
-    @paths = Path.order(:position)
+    @default_path = Path.default_path
+    @paths = Path.where.not(default_path: true).order(:position)
   end
 end

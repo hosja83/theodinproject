@@ -8,7 +8,7 @@ class PathsController < ApplicationController
   end
 
   def index
-    @default_path = Path.default_path
-    @paths = Path.where.not(default_path: true).order(:position)
+    @foundations = Path.default_path
+    @fullstack_paths = Path.fullstack_paths
   end
 end

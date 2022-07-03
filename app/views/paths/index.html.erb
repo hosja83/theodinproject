@@ -6,12 +6,12 @@
   <%= render CardComponent.new(classes: 'odin-dark-bg-accent') do |card| %>
     <% card.header(classes: 'flex justify-between items-center flex-col sm:flex-row space-y-4 sm:space-y-0') do %>
       <div class="flex flex-col space-y-5 sm:space-x-6 sm:space-y-0 sm:flex-row items-center">
-        <%= link_to path_path(@default_path) do %>
-          <%= image_tag @default_path.badge_uri, alt: "#{@default_path.title} badge", class: 'w-24 h-24' %>
+        <%= link_to path_path(@foundations) do %>
+          <%= image_tag @foundations.badge_uri, alt: "#{@foundations.title} badge", class: 'w-24 h-24' %>
         <% end %>
         <div class="flex items-center flex-col sm:block">
           <h3 class="text-1xl mb-1 text-gold-600">START HERE</h3>
-          <%= link_to path_path(@default_path), class: "no-underline" do %>
+          <%= link_to path_path(@foundations), class: "no-underline" do %>
             <h2 class="text-3xl font-semibold">Foundations</h2>
           <% end %>
         </div>
@@ -19,13 +19,13 @@
     <% end %>
 
     <% card.body do %>
-      <p class="text-gray-700 leading-normal text-base"><%= @default_path.description %></p>
+      <p class="text-gray-700 leading-normal text-base"><%= @foundations.description %></p>
     <% end %>
 
     <% card.footer do |card| %>
       <div class="flex space-x-6 justify-center sm:items-center sm:justify-start">
-        <%= render Paths::SelectButtonComponent.new(current_user: current_user, path: @default_path, classes: 'px-16 py-3')%>
-        <%= render Paths::ViewButtonComponent.new(current_user: current_user, path: @default_path) %>
+        <%= render Paths::SelectButtonComponent.new(current_user: current_user, path: @foundations, classes: 'px-16 py-3')%>
+        <%= render Paths::ViewButtonComponent.new(current_user: current_user, path: @foundations) %>
       </div>
       <% end %>
   <% end %>
@@ -40,7 +40,7 @@
   </div>
 
   <div class="flex gap-x-10 gap-y-6 flex-col md:flex-row">
-    <% @paths.each do |path| %>
+    <% @fullstack_paths.each do |path| %>
 
       <%= render CardComponent.new(classes: 'odin-dark-bg-accent') do |card| %>
         <% card.header(classes: 'flex flex-col justify-between items-center') do %>

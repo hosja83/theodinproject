@@ -136,7 +136,7 @@ pre:not(.line-numbers) code {
 }
 
 .odin-dark-clear-button {
-  color: var(--dark-header-color) !important;
+  color: var(--dark-font-color) !important;
 }
 
 .odin-dark-clear-button:hover {
